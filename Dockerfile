@@ -9,13 +9,13 @@ COPY . .
 
 RUN npm install
 
-
-RUN npm run build --prod
+CMD [ "npm", "start" ]   
+# RUN npm run build --prod
 
 # # Stage 2
 
-FROM nginx:1.17.1-alpine
+# FROM nginx:1.17.1-alpine
 
-COPY --from=build-step /app/build /usr/share/nginx/html
+# COPY --from=build-step /app/build /usr/share/nginx/html
 
 # # npm install --save-dev @angular-devkit/build-angular

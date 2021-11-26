@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t makcoder/reactapp .
+  
+script:
+  - docker run -e CI=true makcoder/reactapp npm run test
